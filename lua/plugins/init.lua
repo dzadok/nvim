@@ -23,12 +23,17 @@ return require('packer').startup(function(use)
  use('theprimeagen/harpoon')
  use('mbbill/undotree')
  use('tpope/vim-fugitive')
+ use('christoomey/vim-tmux-navigator')
+ use('tpope/vim-surround')
+ use('numToStr/Comment.nvim')
+ use('nvim-lualine/lualine.nvim')
+ use('lewis6991/gitsigns.nvim')
 
  use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v1.x',
   requires =   
-{   -- LSP Support
+{   -- LSP Supporo
     {'neovim/nvim-lspconfig'},             -- Required
     {'williamboman/mason.nvim'},           -- Optional
     {'williamboman/mason-lspconfig.nvim'}, -- Optional
