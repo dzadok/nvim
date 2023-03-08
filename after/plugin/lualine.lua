@@ -24,5 +24,6 @@ nightfly.command = {
 lualine.setup({
   options = {
     theme = 'tokyonight'
-  }
+  },
+  sections = { lualine_c = { 'filename' }, lualine_y = { 'FugitiveHead'} }
 })
