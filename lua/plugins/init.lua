@@ -19,7 +19,7 @@ return require('packer').startup(function(use)
   --      vim.cmd('colorscheme rose-pine')
   --    end
   --  })
-
+  use 'folke/neodev.nvim'
   use 'rose-pine/neovim'
   use 'folke/tokyonight.nvim'
   use("nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' })
@@ -56,4 +56,29 @@ return require('packer').startup(function(use)
       { 'rafamadriz/friendly-snippets' }, -- Optional
     }
   }
+  use {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "vim-test/vim-test"
+    }
+  }
+
+  use({
+    'rcarriga/neotest',
+    requires = {
+      'marilari88/neotest-vitest',
+    },
+    config = function()
+      require('neotest').setup({
+        adapters = {
+          require('neotest-vitest'),
+          require('neotest-scala'),
+          require('neotest-vim-test'),
+        }
+      })
+    end
+  })
 end)
