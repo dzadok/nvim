@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
   use('nvim-lualine/lualine.nvim')
   use('lewis6991/gitsigns.nvim')
   use("marilari88/twoslash-queries.nvim")
+  use 'tpope/vim-vinegar'
 
   use {
     'VonHeikemen/lsp-zero.nvim',
