@@ -23,7 +23,8 @@ nightfly.command = {
 
 lualine.setup({
   options = {
-    theme = 'tokyonight'
+    -- theme = 'tokyonight'
+    theme = 'catpuccin'
   },
-  sections = { lualine_c = { 'filename' }, lualine_y = { 'FugitiveHead'} }
+  sections = { lualine_c = { 'filename' }, lualine_y = { 'FugitiveHead' } }
 })

@@ -3,7 +3,7 @@ vim.cmd.packadd('packer.nvim')
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     -- or                              , branch = '0.1.x',
@@ -20,8 +20,8 @@ return require('packer').startup(function(use)
   --    end
   --  })
   use 'folke/neodev.nvim'
-  use 'rose-pine/neovim'
   use 'folke/tokyonight.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
   use("nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' })
   use("nvim-treesitter/playground")
   use('theprimeagen/harpoon')
@@ -34,6 +34,13 @@ return require('packer').startup(function(use)
   use('lewis6991/gitsigns.nvim')
   use("marilari88/twoslash-queries.nvim")
   use 'tpope/vim-vinegar'
+  use 'tpope/vim-dadbod'
+
+  use 'jay-babu/mason-nvim-dap.nvim'
+  use "mfussenegger/nvim-dap"
+  use "rcarriga/nvim-dap-ui"
+  use "theHamsta/nvim-dap-virtual-text"
+  use "nvim-telescope/telescope-dap.nvim"
 
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -57,27 +64,24 @@ return require('packer').startup(function(use)
       { 'rafamadriz/friendly-snippets' }, -- Optional
     }
   }
-  use {
-    "nvim-neotest/neotest",
+
+  use({
+    'nvim-neotest/neotest',
     requires = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       "antoinemadec/FixCursorHold.nvim",
-      "vim-test/vim-test"
-    }
-  }
-
-  use({
-    'rcarriga/neotest',
-    requires = {
-      'marilari88/neotest-vitest',
+      "vim-test/vim-test",
+      "marilari88/neotest-vitest",
+      "stevanmilic/neotest-scala",
+      "nvim-neotest/neotest-vim-test"
     },
     config = function()
       require('neotest').setup({
         adapters = {
           require('neotest-vitest'),
           require('neotest-scala'),
-          require('neotest-vim-test'),
+          require('neotest-vim-test')
         }
       })
     end
