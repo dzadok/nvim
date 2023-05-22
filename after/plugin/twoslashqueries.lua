@@ -3,3 +3,4 @@ require("lspconfig")["tsserver"].setup({
     require("twoslash-queries").attach(client, bufnr)
   end,
 })
+
