@@ -36,6 +36,7 @@ return require('packer').startup(function(use)
   -- use 'tpope/vim-vinegar'
   use 'stevearc/oil.nvim'
   use 'tpope/vim-dadbod'
+  use 'tpope/vim-jdaddy'
 
   use 'jay-babu/mason-nvim-dap.nvim'
   use "mfussenegger/nvim-dap"
