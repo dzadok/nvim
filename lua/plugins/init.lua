@@ -33,7 +33,8 @@ return require('packer').startup(function(use)
   use('nvim-lualine/lualine.nvim')
   use('lewis6991/gitsigns.nvim')
   use("marilari88/twoslash-queries.nvim")
-  use 'tpope/vim-vinegar'
+  -- use 'tpope/vim-vinegar'
+  use 'stevearc/oil.nvim'
   use 'tpope/vim-dadbod'
 
   use 'jay-babu/mason-nvim-dap.nvim'
