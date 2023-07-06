@@ -5,7 +5,7 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
   'tsserver',
-  'rust_analyzer'
+  'bashls'
 })
 
 lsp.nvim_workspace()
@@ -34,10 +34,46 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+local lspconfig = require('lspconfig')
+
+lspconfig.bashls.setup({
+  name = "bashls",
+  cmd = { "bash-language-server", "start" },
+  filetypes = { "bash", "sh", "zsh" },
+  settings = {
+    bashIde = {
+      globPattern = "*@(.sh|.inc|.bash|.command)",
+    },
+  },
+  single_file_support = true,
+})
+
+-- local configs = require 'lspconfig.configs'
+--
+-- if not configs.snyk then
+--   configs.snyk = {
+--     default_config = {
+--       cmd = { '/usr/local/bin/snyk-ls', '-f', '/Users/davidzadok/snyk/lsp.log' },
+--       root_dir = function(name)
+--         return lspconfig.util.find_git_ancestor(name) or vim.loop.os_homedir()
+--       end,
+--       init_options = {
+--         activateSnykCode = "true",
+--         activateSnykIac = "false",
+--         enableTelemetry = "false",
+--         manageBinariesAutomatically = "true",
+--         automaticAuthentication = "true"
+--       }
+--     },
+--   }
+-- end
+-- lspconfig.snyk.setup {
+-- }
+
 lsp.setup()
 
 vim.diagnostic.config({
   virtual_text = true
 })
 
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format({async = false})]]
+-- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format({async = false})]]

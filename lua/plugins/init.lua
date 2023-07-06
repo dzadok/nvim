@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
-  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
+  -- use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
 
   --  use({
   --    'rose-pine/neovim',
@@ -20,14 +20,14 @@ return require('packer').startup(function(use)
   --    end
   --  })
   use 'folke/neodev.nvim'
-  use 'folke/tokyonight.nvim'
+  -- use 'folke/tokyonight.nvim'
   use { "catppuccin/nvim", as = "catppuccin" }
   use("nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' })
   use("nvim-treesitter/playground")
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
-  use('christoomey/vim-tmux-navigator')
+  -- use('christoomey/vim-tmux-navigator')
   use('tpope/vim-surround')
   use('numToStr/Comment.nvim')
   use('nvim-lualine/lualine.nvim')
@@ -44,6 +44,7 @@ return require('packer').startup(function(use)
   use "theHamsta/nvim-dap-virtual-text"
   use "nvim-telescope/telescope-dap.nvim"
   use "dmmulroy/tsc.nvim"
+  use({ 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } })
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',

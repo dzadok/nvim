@@ -23,8 +23,7 @@ local status, lualine = pcall(require, 'lualine')
 
 lualine.setup({
   options = {
-    -- theme = 'tokyonight'
     theme = 'catppuccin'
   },
-  sections = { lualine_c = { 'filename' }, lualine_y = { 'FugitiveHead' } }
+  sections = { lualine_c = { 'filename' }, lualine_y = { vim.g['metals_status'] } }
 })
