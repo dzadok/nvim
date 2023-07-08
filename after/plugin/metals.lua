@@ -2,6 +2,12 @@ local metals_config = require("metals").bare_config()
 
 metals_config.init_options.statusBarProvider = "on"
 
+metals_config.settings = {
+  showImplicitArguments = true,
+}
+
+metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 local dap = require("dap")
 
 dap.configurations.scala = {
@@ -39,3 +45,8 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
   group = nvim_metals_group,
 })
+
+
+vim.keymap.set("n", "<leader>ws", function()
+  require("metals").hover_worksheet()
+end)
