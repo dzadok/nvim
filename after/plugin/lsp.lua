@@ -1,4 +1,6 @@
-require('neodev').setup()
+require("neodev").setup({
+  library = { plugins = { "neotest" }, types = true },
+})
 local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
