@@ -9,6 +9,7 @@ return require('packer').startup(function(use)
     -- or                              , branch = '0.1.x',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
+  use 'folke/flash.nvim'
 
   -- use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
 
